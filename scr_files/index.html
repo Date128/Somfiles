@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- saved from url=(0857)https://storage.mds.yandex.net/get-canvas-html5/1003119/2e2fa5b0-8677-43c4-86f0-8c24a00115c7/index.html?link1=https%3A%2F%2Fan.yandex.ru%2Fcount%2FWX0ejI_zOoVX2LaX0XKG03FRPoOQbKgbKga4mGHzFfSxUxRVkVE6Er-_u_M6EzpRVl9KXOoiCl0eRZjpA3GAjUtddKkbjvqxdpdkj7cgGa4sVgXL92EYdoIae9ya9Q4PFqD3r1yaAz2De9ygqG_HZVkMsYMgGaD19l2dyuba1ReHH6A8AXHaFKe2KpOlL9ZXme11fHTWQSVtXI867SUdb4UQJv_uT081RFSvdFCrgWfyaXezq489nRE62vuKIKWpE5Wb5uShCC2SppTC7CfrNjXA8HQsiovmMWsx0xgkVzNe56ZC6gnyiQ9DecVtfU7o2CpWIxMZYnJQczGI3DaFNPp0JMPHW3GHW89EboUODP0dD3QPj61TppwrCD_9GISdO4G2BC5qFpXcK49jKD2agTVXx8ixdFqm3IGVtE7iVpkSVIyD95zB0ydFpimzSHtIZNJRf9QLDpF_VDbxfLMrUR8tKdO4p8yzemSVa7toT-Y_CMwCNLdUg_I7fzVu-8Udr-Yr0n0YIVDP6ILWMQzx97bDdcZRdWp1yryQ-NAbKgcqZgauifS4AByuYqS9CrLKFWWU_FYAG5XOmI8U9XzyOgowGl_z-zTAD6vXpzm6lA1M6ZfgdsJ5MeWtQwxRW4ntDWAMo2RKIife5YwAEEnTiVGrRgtmnQxHn4h2De1ZFnYUXL0zmnPOH48nNQUvWz_CF2W0~2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+  <!--<base target="_blank">--><base href="." target="_blank"> 
+  <script>function CYandexHTML5BannerApi(){var getUrlParam=function(name){name=name.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var regex=new RegExp("[\\?&]"+name+"=([^&#]*)"),results=regex.exec(location.search);return results==null?"":decodeURIComponent(results[1].replace(/\+/g," "))};this.getClickURLNum=function(number){if(!number){number=1}var name="link"+number;return getUrlParam(name)}}var yandexHTML5BannerApi=new CYandexHTML5BannerApi();</script>
+  <meta name="ad.size" content="width=1456,height=180"> 
+   
+  <title>index</title> 
+  <!-- write your code here --> 
+  <script>
+function getUrlParam(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+</script> 
+  <script src="./2b9181b3-fb66-44f0-b5c5-aa389ff13cf5.js.Без названия"></script> 
+  <script src="./index.js.Без названия"></script> 
+  <script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("4B5183BAFEEF024E8A70184E39DF128F");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.index();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script> 
+  <!-- write your code here --> 
+ </head> 
+ <body style="margin:0px;" marginwidth="0" marginheight="0"> 
+  <a id="click1_area" href="https://an.yandex.ru/count/WX0ejI_zOoVX2LaX0XKG03FRPoOQbKgbKga4mGHzFfSxUxRVkVE6Er-_u_M6EzpRVl9KXOoiCl0eRZjpA3GAjUtddKkbjvqxdpdkj7cgGa4sVgXL92EYdoIae9ya9Q4PFqD3r1yaAz2De9ygqG_HZVkMsYMgGaD19l2dyuba1ReHH6A8AXHaFKe2KpOlL9ZXme11fHTWQSVtXI867SUdb4UQJv_uT081RFSvdFCrgWfyaXezq489nRE62vuKIKWpE5Wb5uShCC2SppTC7CfrNjXA8HQsiovmMWsx0xgkVzNe56ZC6gnyiQ9DecVtfU7o2CpWIxMZYnJQczGI3DaFNPp0JMPHW3GHW89EboUODP0dD3QPj61TppwrCD_9GISdO4G2BC5qFpXcK49jKD2agTVXx8ixdFqm3IGVtE7iVpkSVIyD95zB0ydFpimzSHtIZNJRf9QLDpF_VDbxfLMrUR8tKdO4p8yzemSVa7toT-Y_CMwCNLdUg_I7fzVu-8Udr-Yr0n0YIVDP6ILWMQzx97bDdcZRdWp1yryQ-NAbKgcqZgauifS4AByuYqS9CrLKFWWU_FYAG5XOmI8U9XzyOgowGl_z-zTAD6vXpzm6lA1M6ZfgdsJ5MeWtQwxRW4ntDWAMo2RKIife5YwAEEnTiVGrRgtmnQxHn4h2De1ZFnYUXL0zmnPOH48nNQUvWz_CF2W0~2" target="_blank"> 
+   <div id="animation_container" style="background-color:rgba(255, 224, 51, 1.00); width:1456px; height:180px"> 
+    <canvas id="canvas" width="1456" height="180" style="position: absolute; display: block; background-color: rgb(255, 224, 51); width: 1456px; height: 180px;"></canvas> 
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1456px; height:180px; position: absolute; left: 0px; top: 0px; display: block;"> 
+    </div> 
+   </div> </a> 
+  <script>init();</script> 
+  <script>document.getElementById("click1_area").href = yandexHTML5BannerApi.getClickURLNum(1);</script>  
+ 
+</body></html>
